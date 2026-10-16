@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Peserta</title>
+    <!-- CSS Internal -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f2ff;
+            /* Background berwarna biru muda */
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Judul berwarna biru dan rata tengah */
+        h1,
+        h2 {
+            color: #0056b3;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        .radio-options label {
+            display: inline;
+            font-weight: normal;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .btn-kirim {
+            background-color: #0056b3;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-kirim:hover {
+            background-color: #004085;
+        }
+
+        /* Tabel Peserta */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            /* Tabel menggunakan border-collapse: collapse */
+            margin-top: 15px;
+        }
+
+        /* Warna latar pada th */
+        th {
+            background-color: #0056b3;
+            color: #ffffff;
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #004085;
+        }
+
+        /* Padding dan border pada td */
+        td {
+            padding: 8px 10px;
+            border: 1px solid #cccccc;
+            color: #333333;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        hr {
+            margin: 25px 0;
+            border: 0;
+            border-top: 1px solid #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Judul Halaman -->
+        <h1>Pendaftaran Peserta</h1>
+
+        <!-- Form Pendaftaran -->
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+            </div>
+
+            <div class="form-group">
+                <label>Jenis Kelamin:</label>
+                <div class="radio-options">
+                    <input type="radio" id="laki" name="jenis_kelamin" value="Laki-laki" required>
+                    <label for="laki">Laki-laki</label>
+                    <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan">
+                    <label for="perempuan">Perempuan</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="jurusan">Jurusan:</label>
+                <select id="jurusan" name="jurusan" required>
+                    <option value="">-- Pilih Jurusan --</option>
+                    <option value="Informatika">Informatika</option>
+                    <option value="Sistem Informasi">Sistem Informasi</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn-kirim">Kirim</button>
+            </div>
+        </form>
+
+        <hr>
+
+        <!-- Tabel Peserta -->
+        <h2>Daftar Peserta</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="text-center" style="width: 15%;">No</th>
+                    <th>Nama</th>
+                    <th>Jurusan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center">1</td>
+                    <td>Ahmad Fauzi</td>
+                    <td>Informatika</td>
+                </tr>
+                <tr>
+                    <td class="text-center">2</td>
+                    <td>Dewi Lestari</td>
+                    <td>Sistem Informasi</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mahasiswa</title>
+
+    <!-- CSS Internal -->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            /* Jenis huruf */
+            background-color: #f4f6f9;
+            /* Warna latar belakang halaman */
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Class untuk pembungkus utama halaman */
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 25px 30px;
+            border: 1px solid #e0e0e0;
+            /* Border container */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Class untuk judul */
+        .judul-halaman {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        .judul-tabel {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        /* Class untuk grup elemen form */
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #444444;
+        }
+
+        /* Input field teks, email, select, dan textarea */
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 9px 12px;
+            /* Padding */
+            border: 1px solid #cccccc;
+            /* Border */
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        /* Style untuk opsi radio dan checkbox */
+        .pilihan-inline label {
+            display: inline;
+            font-weight: normal;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        /* Wadah tombol form  */
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        /* Class tombol */
+        .btn {
+            flex: 1;
+            padding: 10px 15px;
+            /* Padding tombol */
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            /* Border none */
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-kirim {
+            background-color: #27ae60;
+            /* Warna hijau */
+            color: #ffffff;
+        }
+
+        .btn-kirim:hover {
+            background-color: #219150;
+        }
+
+        .btn-reset {
+            background-color: #e74c3c;
+            /* Warna merah */
+            color: #ffffff;
+        }
+
+        .btn-reset:hover {
+            background-color: #c0392b;
+        }
+
+        /* Garis pemisah */
+        .garis-pemisah {
+            margin: 30px 0;
+            border: 0;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        /* Class styling untuk tabel */
+        .tabel-data {
+            width: 100%;
+            border-collapse: collapse;
+            /* Menggabungkan garis border tabel */
+            font-size: 14px;
+        }
+
+        .tabel-data th {
+            background-color: #2c3e50;
+            /* Warna header tabel */
+            color: #ffffff;
+            padding: 10px 12px;
+            /* Padding th */
+            border: 1px solid #1a252f;
+            /* Border th */
+            text-align: left;
+        }
+
+        .tabel-data td {
+            padding: 9px 12px;
+            /* Padding td */
+            border: 1px solid #dddddd;
+            /* Border td */
+        }
+
+        .tabel-data tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Class utilitas teks */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .font-bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Container Utama -->
+    <div class="container">
+
+        <!-- Bagian Judul Halaman -->
+        <h1 class="judul-halaman">Data Mahasiswa</h1>
+
+        <!-- Bagian Form Input Mahasiswa -->
+        <form action="#" method="post">
+            <!-- Input Nama (Text) -->
+            <div class="form-group">
+                <label for="nama">Nama Lengkap:</label>
+                <input type="text" id="nama" name="nama" placeholder="Contoh: Budi Santoso" required>
+            </div>
+
+            <!-- Input Email (Email) -->
+            <div class="form-group">
+                <label for="email">Alamat Email:</label>
+                <input type="email" id="email" name="email" placeholder="Contoh: budi@kampus.ac.id" required>
+            </div>
+
+            <!-- Input Jenis Kelamin (Radio) -->
+            <div class="form-group">
+                <label>Jenis Kelamin:</label>
+                <div class="pilihan-inline">
+                    <input type="radio" id="jk_l" name="jenis_kelamin" value="Laki-laki" required>
+                    <label for="jk_l">Laki-laki</label>
+                    <input type="radio" id="jk_p" name="jenis_kelamin" value="Perempuan">
+                    <label for="jk_p">Perempuan</label>
+                </div>
+            </div>
+
+            <!-- Input Hobi (Checkbox) -->
+            <div class="form-group">
+                <label>Hobi:</label>
+                <div class="pilihan-inline">
+                    <input type="checkbox" id="hobi_coding" name="hobi[]" value="Coding">
+                    <label for="hobi_coding">Coding</label>
+                    <input type="checkbox" id="hobi_membaca" name="hobi[]" value="Membaca">
+                    <label for="hobi_membaca">Membaca</label>
+                    <input type="checkbox" id="hobi_olahraga" name="hobi[]" value="Olahraga">
+                    <label for="hobi_olahraga">Olahraga</label>
+                    <input type="checkbox" id="hobi_musik" name="hobi[]" value="Musik">
+                    <label for="hobi_musik">Musik</label>
+                </div>
+            </div>
+
+            <!-- Input Program Studi (Select) -->
+            <div class="form-group">
+                <label for="prodi">Program Studi:</label>
+                <select id="prodi" name="prodi" required>
+                    <option value="">-- Pilih Program Studi --</option>
+                    <option value="Teknik Informatika">Teknik Informatika</option>
+                    <option value="Sistem Informasi">Sistem Informasi</option>
+                    <option value="Teknik Komputer">Teknik Komputer</option>
+                </select>
+            </div>
+
+            <!-- Input Alamat (Textarea) -->
+            <div class="form-group">
+                <label for="alamat">Alamat:</label>
+                <textarea id="alamat" name="alamat" rows="3" placeholder="Masukkan alamat lengkap" required></textarea>
+            </div>
+
+            <!-- Tombol Kirim dan Reset -->
+            <div class="btn-group">
+                <button type="submit" class="btn btn-kirim">Kirim</button>
+                <button type="reset" class="btn btn-reset">Reset</button>
+            </div>
+        </form>
+
+        <!-- Garis Pemisah Antara Form dan Tabel -->
+        <hr class="garis-pemisah">
+
+        <!-- Bagian Judul Tabel -->
+        <h2 class="judul-tabel">Tabel Data Mahasiswa</h2>
+
+        <!-- Bagian Tabel Data 5 Mahasiswa -->
+        <table class="tabel-data">
+            <thead>
+                <tr>
+                    <th class="text-center" style="width: 20%;">NIM</th>
+                    <th>Nama</th>
+                    <th>Prodi</th>
+                    <th class="text-center" style="width: 15%;">IPK</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center">23010101</td>
+                    <td>Ahmad Rizky</td>
+                    <td>Teknik Informatika</td>
+                    <td class="text-center">3.75</td>
+                </tr>
+                <tr>
+                    <td class="text-center">23010102</td>
+                    <td>Citra Kirana</td>
+                    <td>Sistem Informasi</td>
+                    <td class="text-center">3.85</td>
+                </tr>
+                <tr>
+                    <td class="text-center">23010103</td>
+                    <td>Dimas Anggara</td>
+                    <td>Teknik Informatika</td>
+                    <td class="text-center">3.60</td>
+                </tr>
+                <tr>
+                    <td class="text-center">23010104</td>
+                    <td>Elsa Prameswari</td>
+                    <td>Sistem Informasi</td>
+                    <td class="text-center">3.90</td>
+                </tr>
+                <tr>
+                    <td class="text-center">23010105</td>
+                    <td>Fajar Pratama</td>
+                    <td>Teknik Informatika</td>
+                    <td class="text-center">3.70</td>
+                </tr>
+            </tbody>
+            <!-- Penggunaan colspan pada bagian footer tabel untuk menggabungkan 3 kolom (NIM, Nama, Prodi) -->
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="text-right font-bold">Rata-rata IPK</td>
+                    <td class="text-center font-bold">3.76</td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </div>
+
+</body>
+
+</html>
